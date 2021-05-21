@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Markers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: new google.maps.LatLng(-8.070385327717482, -34.897394399999996),
+          // center: new google.maps.LatLng(-33.91722, 151.23064),
+          mapTypeId: 'roadmap'
+        });
+
+        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+        var icons = {
+          parking: {
+            // icon: iconBase + 'parking_lot_maps.png'
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+          },
+          library: {
+            // icon: iconBase + 'library_maps.png'
+            icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+          },
+          info: {
+            // icon: iconBase + 'info-i_maps.png'
+            icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+          },
+          one: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/1.png'
+          },
+          one_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/1-lv.png'
+          },
+          two: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/2.png'
+          },
+          two_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/2-lv.png'
+          },
+          three: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/3.png'
+          },
+          three_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/3-lv.png'
+          },
+          four: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/4.png'
+          },
+          four_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/4-lv.png'
+          },
+          five: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/5.png'
+          },
+          five_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/5-lv.png'
+          },
+          six: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/6.png'
+          },
+          six_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/6-lv.png'
+          },
+          seven: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/7.png'
+          },
+          seven_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/7-lv.png'
+          },
+          eight: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/8.png'
+          },
+          eight_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/8-lv.png'
+          },
+          nine: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/9.png'
+          },
+          nine_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/9-lv.png'
+          },
+          ten: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/10.png'
+          },
+          ten_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/10-lv.png'
+          },
+          A: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/A.png'
+          },
+          A_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/A-lv.png'
+          },
+          B: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/B.png'
+          },
+          B_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/B-lv.png'
+          },
+          C: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/C.png'
+          },
+          C_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/C-lv.png'
+          },
+          D: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/D.png'
+          },
+          D_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/D-lv.png'
+          },
+          E: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/E.png'
+          },
+          E_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/E-lv.png'
+          },
+          F: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/F.png'
+          },
+          F_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/F-lv.png'
+          },
+          G: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/G.png'
+          },
+          G_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/G-lv.png'
+          },
+          H: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/H.png'
+          },
+          H_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/H-lv.png'
+          },
+          I: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/I.png'
+          },
+          I_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/I-lv.png'
+          },
+          J: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/J.png'
+          },
+          J_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/J-lv.png'
+          },
+          K: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/K.png'
+          },
+          K_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/K-lv.png'
+          },
+          L: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/L.png'
+          },
+          L_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/L-lv.png'
+          },
+          M: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/M.png'
+          },
+          M_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/M-lv.png'
+          },
+          N: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/N.png'
+          },
+          N_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/N-lv.png'
+          },
+          O: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/O.png'
+          },
+          O_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/O-lv.png'
+          },
+          P: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/P.png'
+          },
+          P_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/P-lv.png'
+          },
+          Q: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/Q.png'
+          },
+          Q_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/Q-lv.png'
+          },
+          R: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/R.png'
+          },
+          R_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/R-lv.png'
+          },
+          S: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/S.png'
+          },
+          S_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/S-lv.png'
+          },
+          T: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/T.png'
+          },
+          T_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/T-lv.png'
+          },
+          U: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/U.png'
+          },
+          U_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/U-lv.png'
+          },
+          V: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/V.png'
+          },
+          V_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/V-lv.png'
+          },
+          W: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/W.png'
+          },
+          W_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/W-lv.png'
+          },
+          X: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/X.png'
+          },
+          X_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/X-lv.png'
+          },
+          Y: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/Y.png'
+          },
+          Y_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/Y-lv.png'
+          },
+          Z: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/Z.png'
+          },
+          Z_lv: {
+            icon: 'http://maps.google.com/mapfiles/kml/paddle/Z-lv.png'
+          }
+        };
+
+        function addMarker(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            // label: 'BTS2',
+            // draggable: true,
+            animation: google.maps.Animation.DROP,
+            icon: icons[feature.type].icon,
+            map: map
+          });
+          // marker.addListener('click', toggleBounce);
+
+          google.maps.event.addListener(marker, 'click', function(evt) {
+            // var string = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+            var string = '<p>Lat: ' + evt.latLng.lat() + ' Lng: ' + evt.latLng.lng() + '</p>';
+
+            marker.info = new google.maps.InfoWindow({
+              content: feature.content
+            });
+
+            marker.info.open(map, marker);
+          });
+          // marker.addListener('click', function(evt) {
+          //   infowindow.open(map, marker);
+          // });
+        }
+
+        // function toggleBounce() {
+        //   if (marker.getAnimation() !== null) {
+        //     marker.setAnimation(null);
+        //   } else {
+        //     marker.setAnimation(google.maps.Animation.BOUNCE);
+        //   }
+        // }
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            'sandstone rock formation in the southern part of the '+
+            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+            'Aboriginal people of the area. It has many springs, waterholes, '+
+            'rock caves and ancient paintings. Uluru is listed as a World '+
+            'Heritage Site.</p>'+
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+
+        var features = [
+          
+            {
+              position: new google.maps.LatLng(-8.063825, -34.893906),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 238.39803189847754<br /><b></b>: -82.0<br /><b></b>: -67.15<br /><b></b>: -70.35<br /><b></b>: -75.4<br /><b></b>: -69.25<br /><b></b>: -65.2<br /></p></div></div>',
+              type: 'one'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.065601, -34.892693),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 238.39803189847754<br /><b></b>: -79.6666666666667<br /><b></b>: -68.6<br /><b></b>: -70.3<br /><b></b>: -72.8333333333333<br /><b></b>: -66.4<br /><b></b>: -64.8333333333333<br /></p></div></div>',
+              type: 'one_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.068869, -34.890717),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 122.34916344665616<br /><b></b>: -70.5333333333333<br /><b></b>: -72.7<br /><b></b>: -73.4<br /><b></b>: -55.7333333333333<br /><b></b>: -34.5333333333333<br /><b></b>: -71.0666666666667<br /></p></div></div>',
+              type: 'two'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.067794, -34.89048),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 122.34916344665616<br /><b></b>: -65.675<br /><b></b>: -72.225<br /><b></b>: -72.625<br /><b></b>: -53.525<br /><b></b>: -37.475<br /><b></b>: -69.575<br /></p></div></div>',
+              type: 'two_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.076425, -34.899723),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 411.6326323218002<br /><b></b>: -72.0<br /><b></b>: -52.0<br /><b></b>: -82.7<br /><b></b>: -73.45<br /><b></b>: -78.05<br /><b></b>: -88.0<br /></p></div></div>',
+              type: 'three'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.07634, -34.895985),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 411.6326323218002<br /><b></b>: -72.2333333333333<br /><b></b>: -57.8666666666667<br /><b></b>: -81.0333333333333<br /><b></b>: -72.5333333333333<br /><b></b>: -75.0333333333333<br /><b></b>: -84.9333333333333<br /></p></div></div>',
+              type: 'three_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.066986, -34.895985),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 160.8547339182509<br /><b></b>: -61.7333333333333<br /><b></b>: -65.0<br /><b></b>: -64.9666666666667<br /><b></b>: -62.2333333333333<br /><b></b>: -75.1666666666667<br /><b></b>: -43.7333333333333<br /></p></div></div>',
+              type: 'four'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.066973, -34.894524),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 160.8547339182509<br /><b></b>: -64.6333333333333<br /><b></b>: -60.7<br /><b></b>: -66.9<br /><b></b>: -64.5333333333333<br /><b></b>: -74.1666666666667<br /><b></b>: -40.4<br /></p></div></div>',
+              type: 'four_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.065822, -34.890881),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 101.18335347100998<br /><b></b>: -81.0333333333333<br /><b></b>: -78.4<br /><b></b>: -80.4<br /><b></b>: -82.1333333333333<br /><b></b>: -60.9666666666667<br /><b></b>: -68.8666666666667<br /></p></div></div>',
+              type: 'five'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.065832, -34.8918),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 101.18335347100998<br /><b></b>: -84.8<br /><b></b>: -78.0<br /><b></b>: -80.15<br /><b></b>: -77.75<br /><b></b>: -64.4<br /><b></b>: -65.65<br /></p></div></div>',
+              type: 'five_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069352, -34.898972),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 180.90618093414227<br /><b></b>: -51.45<br /><b></b>: -62.0<br /><b></b>: -66.85<br /><b></b>: -53.45<br /><b></b>: -57.15<br /><b></b>: -51.55<br /></p></div></div>',
+              type: 'six'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069982, -34.897457),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 180.90618093414227<br /><b></b>: -49.2666666666667<br /><b></b>: -62.5333333333333<br /><b></b>: -66.0666666666667<br /><b></b>: -56.0666666666667<br /><b></b>: -60.9333333333333<br /><b></b>: -53.8333333333333<br /></p></div></div>',
+              type: 'six_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.066896, -34.894684),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 123.5578481800679<br /><b></b>: -67.7<br /><b></b>: -67.4<br /><b></b>: -70.4666666666667<br /><b></b>: -69.5<br /><b></b>: -68.4<br /><b></b>: -38.5666666666667<br /></p></div></div>',
+              type: 'seven'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.066382, -34.895679),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 123.5578481800679<br /><b></b>: -66.8666666666667<br /><b></b>: -66.5333333333333<br /><b></b>: -68.2333333333333<br /><b></b>: -68.8333333333333<br /><b></b>: -66.2666666666667<br /><b></b>: -40.2<br /></p></div></div>',
+              type: 'seven_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.063335, -34.888771),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 88.93821882164256<br /><b></b>: -63.8666666666667<br /><b></b>: -66.2666666666667<br /><b></b>: -85.9333333333333<br /><b></b>: -71.0333333333333<br /><b></b>: -71.4666666666667<br /><b></b>: -82.3333333333333<br /></p></div></div>',
+              type: 'eight'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.062634, -34.888382),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 88.93821882164256<br /><b></b>: -65.2666666666667<br /><b></b>: -69.3666666666667<br /><b></b>: -86.7<br /><b></b>: -70.5666666666667<br /><b></b>: -76.8<br /><b></b>: -82.5<br /></p></div></div>',
+              type: 'eight_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069254, -34.888077),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 139.17157447553356<br /><b></b>: -68.2333333333333<br /><b></b>: -80.1666666666667<br /><b></b>: -76.4<br /><b></b>: -71.1666666666667<br /><b></b>: -51.7666666666667<br /><b></b>: -71.5333333333333<br /></p></div></div>',
+              type: 'nine'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.068668, -34.889194),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 139.17157447553356<br /><b></b>: -68.3666666666667<br /><b></b>: -78.7<br /><b></b>: -76.5<br /><b></b>: -69.7666666666667<br /><b></b>: -50.3666666666667<br /><b></b>: -72.9333333333333<br /></p></div></div>',
+              type: 'nine_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069956, -34.890182),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 121.52864636486045<br /><b></b>: -47.2<br /><b></b>: -82.65<br /><b></b>: -59.1<br /><b></b>: -63.7<br /><b></b>: -50.25<br /><b></b>: -72.0<br /></p></div></div>',
+              type: 'ten'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.06942, -34.891144),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 121.52864636486045<br /><b></b>: -48.9<br /><b></b>: -81.9333333333333<br /><b></b>: -66.8666666666667<br /><b></b>: -64.8<br /><b></b>: -51.4<br /><b></b>: -74.7666666666667<br /></p></div></div>',
+              type: 'ten_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070123, -34.89386),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 76.78062174576914<br /><b></b>: -45.575<br /><b></b>: -65.5<br /><b></b>: -66.55<br /><b></b>: -47.825<br /><b></b>: -48.575<br /><b></b>: -48.175<br /></p></div></div>',
+              type: 'A'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070443, -34.893242),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 76.78062174576914<br /><b></b>: -45.7666666666667<br /><b></b>: -66.5<br /><b></b>: -67.0333333333333<br /><b></b>: -48.6333333333333<br /><b></b>: -50.1<br /><b></b>: -51.3<br /></p></div></div>',
+              type: 'A_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.077438, -34.8988),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 126.76308625572334<br /><b></b>: -57.7666666666667<br /><b></b>: -22.9666666666667<br /><b></b>: -67.2666666666667<br /><b></b>: -63.1666666666667<br /><b></b>: -71.2333333333333<br /><b></b>: -80.3<br /></p></div></div>',
+              type: 'B'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.077062, -34.897713),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 126.76308625572334<br /><b></b>: -59.825<br /><b></b>: -25.95<br /><b></b>: -71.825<br /><b></b>: -63.675<br /><b></b>: -75.575<br /><b></b>: -81.85<br /></p></div></div>',
+              type: 'B_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.068583, -34.896469),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 195.72836253241607<br /><b></b>: -45.3<br /><b></b>: -60.75<br /><b></b>: -56.8<br /><b></b>: -54.55<br /><b></b>: -67.0<br /><b></b>: -44.15<br /></p></div></div>',
+              type: 'C'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070085, -34.897396),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 195.72836253241607<br /><b></b>: -44.2<br /><b></b>: -61.8333333333333<br /><b></b>: -61.0666666666667<br /><b></b>: -54.2<br /><b></b>: -66.9333333333333<br /><b></b>: -42.8666666666667<br /></p></div></div>',
+              type: 'C_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.076257, -34.895248),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 82.68125305399943<br /><b></b>: -71.3666666666667<br /><b></b>: -47.6333333333333<br /><b></b>: -76.6<br /><b></b>: -63.7666666666667<br /><b></b>: -73.7666666666667<br /><b></b>: -83.5<br /></p></div></div>',
+              type: 'D'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.0764, -34.895985),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 82.68125305399943<br /><b></b>: -68.65<br /><b></b>: -50.6<br /><b></b>: -74.95<br /><b></b>: -68.3666666666667<br /><b></b>: -73.5833333333333<br /><b></b>: -83.7666666666667<br /></p></div></div>',
+              type: 'D_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069596, -34.894943),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 89.95510659432105<br /><b></b>: -48.5333333333333<br /><b></b>: -69.7333333333333<br /><b></b>: -64.3666666666667<br /><b></b>: -62.5666666666667<br /><b></b>: -64.6666666666667<br /><b></b>: -50.3333333333333<br /></p></div></div>',
+              type: 'E'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069939, -34.894203),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 89.95510659432105<br /><b></b>: -47.6<br /><b></b>: -71.0<br /><b></b>: -62.2<br /><b></b>: -62.65<br /><b></b>: -65.15<br /><b></b>: -51.5<br /></p></div></div>',
+              type: 'E_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.06857, -34.896713),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 316.7166415615649<br /><b></b>: -50.1<br /><b></b>: -66.3<br /><b></b>: -63.25<br /><b></b>: -62.85<br /><b></b>: -63.7<br /><b></b>: -50.9<br /></p></div></div>',
+              type: 'F'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069138, -34.899532),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 316.7166415615649<br /><b></b>: -49.0<br /><b></b>: -64.0<br /><b></b>: -64.3<br /><b></b>: -61.95<br /><b></b>: -65.65<br /><b></b>: -52.2<br /></p></div></div>',
+              type: 'F_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.06109, -34.904819),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 125.36225530721994<br /><b></b>: -82.4333333333333<br /><b></b>: -58.7333333333333<br /><b></b>: -75.7666666666667<br /><b></b>: -71.3666666666667<br /><b></b>: -77.1333333333334<br /><b></b>: -77.3<br /></p></div></div>',
+              type: 'G'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.061328, -34.903706),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 125.36225530721994<br /><b></b>: -80.4666666666667<br /><b></b>: -58.1333333333333<br /><b></b>: -76.5333333333333<br /><b></b>: -75.2333333333333<br /><b></b>: -75.0333333333333<br /><b></b>: -75.4666666666667<br /></p></div></div>',
+              type: 'G_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072116, -34.897007),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 189.65526135854174<br /><b></b>: -54.3333333333333<br /><b></b>: -59.3666666666667<br /><b></b>: -67.4333333333333<br /><b></b>: -47.2<br /><b></b>: -75.1666666666667<br /><b></b>: -75.7666666666667<br /></p></div></div>',
+              type: 'H'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070425, -34.896782),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 189.65526135854174<br /><b></b>: -54.7625<br /><b></b>: -57.9625<br /><b></b>: -63.2<br /><b></b>: -45.7<br /><b></b>: -73.025<br /><b></b>: -70.4<br /></p></div></div>',
+              type: 'H_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069288, -34.888081),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 143.5281344640361<br /><b></b>: -72.7<br /><b></b>: -77.3333333333333<br /><b></b>: -78.3333333333333<br /><b></b>: -69.9333333333333<br /><b></b>: -56.5333333333333<br /><b></b>: -74.3333333333333<br /></p></div></div>',
+              type: 'I'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.068669, -34.889225),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 143.5281344640361<br /><b></b>: -72.1<br /><b></b>: -80.4333333333333<br /><b></b>: -76.9666666666667<br /><b></b>: -70.0<br /><b></b>: -54.4333333333333<br /><b></b>: -72.2<br /></p></div></div>',
+              type: 'I_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069053, -34.899754),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 178.10864254486737<br /><b></b>: -44.9333333333333<br /><b></b>: -57.9666666666667<br /><b></b>: -61.0333333333333<br /><b></b>: -54.7<br /><b></b>: -64.0<br /><b></b>: -46.0333333333333<br /></p></div></div>',
+              type: 'J'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069653, -34.898254),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 178.10864254486737<br /><b></b>: -47.1666666666667<br /><b></b>: -58.0666666666667<br /><b></b>: -62.3333333333333<br /><b></b>: -55.2<br /><b></b>: -62.4<br /><b></b>: -47.7333333333333<br /></p></div></div>',
+              type: 'J_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072644, -34.890686),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 108.18756658012323<br /><b></b>: -44.0666666666667<br /><b></b>: -74.8<br /><b></b>: -69.6<br /><b></b>: -58.1333333333333<br /><b></b>: -49.0<br /><b></b>: -80.2<br /></p></div></div>',
+              type: 'K'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.073597, -34.890488),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 108.18756658012323<br /><b></b>: -41.0<br /><b></b>: -76.3333333333333<br /><b></b>: -71.0<br /><b></b>: -60.1<br /><b></b>: -48.4<br /><b></b>: -79.6333333333333<br /></p></div></div>',
+              type: 'K_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069371, -34.898918),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 166.76795855386013<br /><b></b>: -55.2666666666667<br /><b></b>: -58.1333333333333<br /><b></b>: -62.0666666666667<br /><b></b>: -57.2<br /><b></b>: -64.8333333333333<br /><b></b>: -51.4<br /></p></div></div>',
+              type: 'L'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069934, -34.897514),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 166.76795855386013<br /><b></b>: -52.5<br /><b></b>: -57.2<br /><b></b>: -61.0<br /><b></b>: -55.9<br /><b></b>: -63.9333333333333<br /><b></b>: -47.4666666666667<br /></p></div></div>',
+              type: 'L_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.071041, -34.891953),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 78.45259710798283<br /><b></b>: -52.6<br /><b></b>: -72.2<br /><b></b>: -74.475<br /><b></b>: -52.675<br /><b></b>: -42.325<br /><b></b>: -81.525<br /></p></div></div>',
+              type: 'M'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.071721, -34.892143),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 78.45259710798283<br /><b></b>: -55.6<br /><b></b>: -70.1<br /><b></b>: -73.6<br /><b></b>: -50.1<br /><b></b>: -39.225<br /><b></b>: -80.6<br /></p></div></div>',
+              type: 'M_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069141, -34.890709),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 369.28156567527725<br /><b></b>: -59.8333333333333<br /><b></b>: -66.0333333333333<br /><b></b>: -70.8<br /><b></b>: -52.1<br /><b></b>: -31.4333333333333<br /><b></b>: -71.8666666666667<br /></p></div></div>',
+              type: 'N'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072081, -34.892269),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 369.28156567527725<br /><b></b>: -59.9666666666667<br /><b></b>: -65.6666666666667<br /><b></b>: -68.8666666666667<br /><b></b>: -52.7333333333333<br /><b></b>: -35.4666666666667<br /><b></b>: -74.0<br /></p></div></div>',
+              type: 'N_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069509, -34.890896),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 168.780166975038<br /><b></b>: -69.2<br /><b></b>: -77.1<br /><b></b>: -72.3<br /><b></b>: -66.55<br /><b></b>: -57.7<br /><b></b>: -70.9<br /></p></div></div>',
+              type: 'O'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.068039, -34.890514),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 168.780166975038<br /><b></b>: -69.6666666666667<br /><b></b>: -75.0666666666667<br /><b></b>: -72.7666666666667<br /><b></b>: -65.7<br /><b></b>: -56.7666666666667<br /><b></b>: -67.4666666666667<br /></p></div></div>',
+              type: 'O_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.075774, -34.893726),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 79.69788244103201<br /><b></b>: -56.85<br /><b></b>: -67.0<br /><b></b>: -72.5<br /><b></b>: -49.9<br /><b></b>: -65.65<br /><b></b>: -81.7<br /></p></div></div>',
+              type: 'P'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.075505, -34.893055),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 79.69788244103201<br /><b></b>: -58.1<br /><b></b>: -66.9<br /><b></b>: -72.4<br /><b></b>: -51.675<br /><b></b>: -64.575<br /><b></b>: -80.1<br /></p></div></div>',
+              type: 'P_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.067765, -34.896698),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 171.2985065366141<br /><b></b>: -60.1<br /><b></b>: -50.6333333333333<br /><b></b>: -52.8<br /><b></b>: -36.7666666666667<br /><b></b>: -59.5666666666667<br /><b></b>: -51.1666666666667<br /></p></div></div>',
+              type: 'Q'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069293, -34.8965),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 171.2985065366141<br /><b></b>: -55.1333333333333<br /><b></b>: -51.3333333333333<br /><b></b>: -50.9333333333333<br /><b></b>: -34.9666666666667<br /><b></b>: -58.4666666666667<br /><b></b>: -49.8333333333333<br /></p></div></div>',
+              type: 'Q_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069234, -34.89566),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 547.520674822893<br /><b></b>: -51.5<br /><b></b>: -75.5<br /><b></b>: -63.35<br /><b></b>: -53.25<br /><b></b>: -55.5<br /><b></b>: -60.1<br /></p></div></div>',
+              type: 'R'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069606, -34.890701),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 547.520674822893<br /><b></b>: -51.4<br /><b></b>: -73.8<br /><b></b>: -65.1<br /><b></b>: -54.65<br /><b></b>: -56.05<br /><b></b>: -57.95<br /></p></div></div>',
+              type: 'R_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.071206, -34.89698),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 226.97857541519917<br /><b></b>: -46.15<br /><b></b>: -64.1<br /><b></b>: -63.9<br /><b></b>: -58.95<br /><b></b>: -72.45<br /><b></b>: -70.1<br /></p></div></div>',
+              type: 'S'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072914, -34.895851),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 226.97857541519917<br /><b></b>: -43.55<br /><b></b>: -63.1<br /><b></b>: -58.55<br /><b></b>: -58.5<br /><b></b>: -73.35<br /><b></b>: -69.0<br /></p></div></div>',
+              type: 'S_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072435, -34.893955),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 353.823377553375<br /><b></b>: -44.05<br /><b></b>: -69.75<br /><b></b>: -69.7<br /><b></b>: -56.3<br /><b></b>: -60.15<br /><b></b>: -75.2<br /></p></div></div>',
+              type: 'T'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072627, -34.890747),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 353.823377553375<br /><b></b>: -44.0<br /><b></b>: -70.9<br /><b></b>: -67.3<br /><b></b>: -53.9<br /><b></b>: -64.1666666666667<br /><b></b>: -78.3333333333333<br /></p></div></div>',
+              type: 'T_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069246, -34.888065),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 390.22316833479476<br /><b></b>: -64.8<br /><b></b>: -77.9<br /><b></b>: -79.55<br /><b></b>: -72.2<br /><b></b>: -57.75<br /><b></b>: -75.95<br /></p></div></div>',
+              type: 'U'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.06575, -34.887756),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 390.22316833479476<br /><b></b>: -64.8666666666667<br /><b></b>: -78.9666666666667<br /><b></b>: -77.6333333333333<br /><b></b>: -70.9<br /><b></b>: -62.1333333333333<br /><b></b>: -75.7<br /></p></div></div>',
+              type: 'U_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070462, -34.893307),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 119.98563756563708<br /><b></b>: -44.8<br /><b></b>: -64.7666666666667<br /><b></b>: -69.7333333333333<br /><b></b>: -57.4333333333333<br /><b></b>: -51.6<br /><b></b>: -59.2666666666667<br /></p></div></div>',
+              type: 'V'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070803, -34.892273),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 119.98563756563708<br /><b></b>: -50.5333333333333<br /><b></b>: -69.4666666666667<br /><b></b>: -68.7666666666667<br /><b></b>: -55.4666666666667<br /><b></b>: -51.6333333333333<br /><b></b>: -60.2<br /></p></div></div>',
+              type: 'V_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070557, -34.896873),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 132.69361680588267<br /><b></b>: -53.15<br /><b></b>: -54.45<br /><b></b>: -60.65<br /><b></b>: -48.15<br /><b></b>: -70.55<br /><b></b>: -61.95<br /></p></div></div>',
+              type: 'W'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069473, -34.897377),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 132.69361680588267<br /><b></b>: -49.5<br /><b></b>: -53.05<br /><b></b>: -62.1<br /><b></b>: -46.05<br /><b></b>: -70.2<br /><b></b>: -60.25<br /></p></div></div>',
+              type: 'W_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.070127, -34.889671),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 167.8874933846126<br /><b></b>: -65.0333333333333<br /><b></b>: -80.8<br /><b></b>: -76.4<br /><b></b>: -67.1<br /><b></b>: -58.7666666666667<br /><b></b>: -78.1666666666667<br /></p></div></div>',
+              type: 'X'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.068729, -34.889095),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 167.8874933846126<br /><b></b>: -65.1<br /><b></b>: -80.5666666666667<br /><b></b>: -76.9<br /><b></b>: -66.6666666666667<br /><b></b>: -59.1666666666667<br /><b></b>: -75.0<br /></p></div></div>',
+              type: 'X_lv'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.072454, -34.893047),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 430.90441607232947<br /><b></b>: -49.5333333333333<br /><b></b>: -63.9333333333333<br /><b></b>: -55.7<br /><b></b>: -39.9333333333333<br /><b></b>: -57.1<br /><b></b>: -66.9333333333333<br /></p></div></div>',
+              type: 'Y'
+            },
+          
+            {
+              position: new google.maps.LatLng(-8.069358, -34.895401),
+              content: '<div id="content"><div id="bodyContent"><p><b>Lat</b>: <br /><b>Lng</b>: <br /><b>Distance</b>: 430.90441607232947<br /><b></b>: -52.95<br /><b></b>: -59.25<br /><b></b>: -60.575<br /><b></b>: -40.55<br /><b></b>: -57.975<br /><b></b>: -62.025<br /></p></div></div>',
+              type: 'Y_lv'
+            },
+          
+        ];
+
+        var markers_count = 0;
+        for (var i = 0, feature; feature = features[i]; i++) {
+          addMarker(feature);
+          markers_count++;
+        }
+        console.log('markers:' + markers_count);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm620zmxWyZFIPX2FaiW81Tp1SbLmogoE&callback=initMap">
+    </script>
+  </body>
+</html>

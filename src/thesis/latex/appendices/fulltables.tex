@@ -1,0 +1,469 @@
+\section{Apêndice - Tabelas de Resultados Obtidos}
+\label{appendix:fulltables}
+
+Este apêndice apresenta uma versão completa dos resultados apresentados na Seção \ref{sec:resultados}. São 3 tabelas no total sendo uma para cada experimento com tamanho de resolução de GRID diferente realizado. Para cada tabela, a primeira coluna especifica o algoritmo de regressão utilizado e seu conjunto de parâmetros, as outras colunas indicam as métricas apresentadas na Seção \ref{sec:metricas}.
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+
+\subsection{Resultados para GRID com resolução de 30m}   
+\label{appendix:fulltable30m}
+
+%TABELA COMPLETA 30m
+\begin{center}
+\begin{longtable}{|l|l|l|l|l|}
+\caption{Resultados Completos - Resolução 30m.} 
+\label{table:resultsComplete30m} \\
+%HEADER
+\hline \multicolumn{1}{|c|}{\textbf{Técnica}} & \multicolumn{1}{c|}{\textbf{$\overline{E_{\mu}}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{E_{rms}}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{\sigma}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{V}$ (m)}} \\ \hline 
+\endfirsthead
+%END
+\hline
+\endlastfoot
+%VALUES
+KNN ($K=1$; $W=0$) & 153 & 252 & 6 & 41 \\
+KNN ($K=2$; $W=0$) & 142 & 229 & 5 & 33 \\
+KNN ($K=2$; $W=1$) & 117 & 191 & 4 & 23 \\
+KNN ($K=2$; $W=2$) & 119 & 193 & 4 & 23 \\
+KNN ($K=2$; $W=3$) & 120 & 195 & 4 & 24 \\
+KNN ($K=3$; $W=0$) & 134 & 217 & 5 & 29 \\
+KNN ($K=3$; $W=1$) & 122 & 199 & 4 & 25 \\
+KNN ($K=3$; $W=2$) & 121 & 197 & 4 & 24 \\
+KNN ($K=3$; $W=3$) & 121 & 197 & 4 & 24 \\
+KNN ($K=4$; $W=0$) & 135 & 223 & 5 & 32 \\
+KNN ($K=4$; $W=1$) & 127 & 211 & 5 & 29 \\
+KNN ($K=4$; $W=2$) & 126 & 213 & 5 & 30 \\
+KNN ($K=4$; $W=3$) & 128 & 217 & 5 & 31 \\
+KNN ($K=5$; $W=0$) & 134 & 217 & 5 & 30 \\
+KNN ($K=5$; $W=1$) & 125 & 206 & 5 & 27 \\
+KNN ($K=5$; $W=2$) & 125 & 207 & 5 & 28 \\
+KNN ($K=5$; $W=3$) & 126 & 211 & 5 & 29 \\
+MLP (Act=identity; LR=constante; HLS=50) & 1653 & 1721 & 15 & 231 \\
+MLP (Act=identity; LR=constante; HLS=100) & 1655 & 1725 & 15 & 234 \\
+MLP (Act=identity; LR=constante; HLS=200) & 1681 & 1753 & 15 & 246 \\
+MLP (Act=identity; LR=constante; HLS=500) & 1692 & 1766 & 16 & 256 \\
+MLP (Act=identity; LR=invscaling; HLS=50) & 1626 & 1698 & 15 & 237 \\
+MLP (Act=identity; LR=invscaling; HLS=100) & 1637 & 1706 & 15 & 230 \\
+MLP (Act=identity; LR=invscaling; HLS=200) & 1680 & 1751 & 15 & 244 \\
+MLP (Act=identity; LR=invscaling; HLS=500) & 1686 & 1759 & 15 & 250 \\
+MLP (Act=identity; LR=adaptativo; HLS=50) & 1603 & 1676 & 15 & 241 \\
+MLP (Act=identity; LR=adaptativo; HLS=100) & 1642 & 1712 & 15 & 234 \\
+MLP (Act=identity; LR=adaptativo; HLS=200) & 1676 & 1748 & 15 & 244 \\
+MLP (Act=identity; LR=adaptativo; HLS=500) & 1693 & 1767 & 16 & 257 \\
+MLP (Act=logistic; LR=constante; HLS=50) & 1717 & 1786 & 15 & 240 \\
+MLP (Act=logistic; LR=constante; HLS=100) & 1650 & 1725 & 15 & 254 \\
+MLP (Act=logistic; LR=constante; HLS=200) & 1701 & 1778 & 16 & 267 \\
+MLP (Act=logistic; LR=constante; HLS=500) & 1681 & 1756 & 15 & 255 \\
+MLP (Act=logistic; LR=invscaling; HLS=50) & 1663 & 1731 & 15 & 232 \\
+MLP (Act=logistic; LR=invscaling; HLS=100) & 1672 & 1745 & 15 & 248 \\
+MLP (Act=logistic; LR=invscaling; HLS=200) & 1676 & 1749 & 15 & 252 \\
+MLP (Act=logistic; LR=invscaling; HLS=500) & 1691 & 1765 & 15 & 255 \\
+MLP (Act=logistic; LR=adaptativo; HLS=50) & 1622 & 1692 & 15 & 229 \\
+MLP (Act=logistic; LR=adaptativo; HLS=100) & 1679 & 1750 & 15 & 245 \\
+MLP (Act=logistic; LR=adaptativo; HLS=200) & 1677 & 1750 & 15 & 252 \\
+MLP (Act=logistic; LR=adaptativo; HLS=500) & 1676 & 1751 & 16 & 255 \\
+MLP (Act=tanh; LR=constante; HLS=50) & 1628 & 1698 & 15 & 233 \\
+MLP (Act=tanh; LR=constante; HLS=100) & 1631 & 1702 & 15 & 235 \\
+MLP (Act=tanh; LR=constante; HLS=200) & 1682 & 1753 & 15 & 246 \\
+MLP (Act=tanh; LR=constante; HLS=500) & 1691 & 1765 & 16 & 255 \\
+MLP (Act=tanh; LR=invscaling; HLS=50) & 1656 & 1725 & 15 & 234 \\
+MLP (Act=tanh; LR=invscaling; HLS=100) & 1639 & 1710 & 15 & 236 \\
+MLP (Act=tanh; LR=invscaling; HLS=200) & 1683 & 1755 & 15 & 248 \\
+MLP (Act=tanh; LR=invscaling; HLS=500) & 1692 & 1766 & 16 & 255 \\
+MLP (Act=tanh; LR=adaptativo; HLS=50) & 1646 & 1718 & 15 & 242 \\
+MLP (Act=tanh; LR=adaptativo; HLS=100) & 1651 & 1722 & 15 & 236 \\
+MLP (Act=tanh; LR=adaptativo; HLS=200) & 1671 & 1742 & 15 & 242 \\
+MLP (Act=tanh; LR=adaptativo; HLS=500) & 1690 & 1764 & 15 & 254 \\
+MLP (Act=relu; LR=constante; HLS=50) & 1641 & 1719 & 16 & 262 \\
+MLP (Act=relu; LR=constante; HLS=100) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=constante; HLS=200) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=constante; HLS=500) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=50) & 1711 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=100) & 1710 & 1789 & 16 & 276 \\
+MLP (Act=relu; LR=invscaling; HLS=200) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=500) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=adaptativo; HLS=50) & 1691 & 1770 & 16 & 272 \\
+MLP (Act=relu; LR=adaptativo; HLS=100) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=adaptativo; HLS=200) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=adaptativo; HLS=500) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,05$) & 1627 & 1697 & 15 & 230 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,1$) & 1707 & 1785 & 16 & 273 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,05$) & 1440 & 1509 & 14 & 205 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,1$) & 1681 & 1759 & 16 & 266 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,05$) & 1390 & 1441 & 11 & 142 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,1$) & 1594 & 1680 & 16 & 281 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,05$) & 1441 & 1504 & 13 & 187 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,1$) & 1466 & 1543 & 15 & 234 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,2$) & 1708 & 1788 & 16 & 277 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,05$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,1$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,05$) & 1682 & 1756 & 15 & 252 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,1$) & 1598 & 1679 & 16 & 265 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,05$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,1$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,2$) & 1697 & 1777 & 16 & 278 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,05$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,1$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,2$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,05$) & 1629 & 1696 & 14 & 225 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,1$) & 1669 & 1741 & 15 & 243 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,2$) & 1688 & 1761 & 15 & 252 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,05$) & 1629 & 1697 & 15 & 226 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,1$) & 1669 & 1741 & 15 & 244 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,2$) & 1689 & 1763 & 16 & 253 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,05$) & 1631 & 1698 & 14 & 225 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,1$) & 1671 & 1743 & 15 & 244 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,2$) & 1689 & 1762 & 16 & 253 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,05$) & 1631 & 1698 & 14 & 225 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,1$) & 1671 & 1742 & 15 & 243 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,2$) & 1690 & 1763 & 16 & 253 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,05$) & 1402 & 1501 & 16 & 285 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,1$) & 1279 & 1411 & 18 & 348 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,2$) & 1435 & 1515 & 15 & 234 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,05$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,1$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,2$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,05$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,1$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,2$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,05$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,1$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,2$) & 1507 & 1564 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,5$) & 1630 & 1706 & 15 & 254 \\
+\textit{Random Forest} ($M=10$) & 134 & 238 & 6 & 39 \\
+\textit{Random Forest} ($M=20$) & 133 & 238 & 6 & 39 \\
+\textit{Random Forest} ($M=50$) & 130 & 233 & 6 & 37 \\
+\textit{Random Forest} ($M=75$) & 127 & 230 & 5 & 37 \\
+\textit{Random Forest} ($M=100$) & 126 & 231 & 6 & 37 \\
+\end{longtable}
+\end{center}
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+
+\subsection{Resultados para GRID com resolução de 20m}
+\label{appendix:fulltable20m}
+
+%TABELA COMPLETA 20m
+\begin{center}
+\begin{longtable}{|l|l|l|l|l|}
+\caption{Resultados Completos - Resolução 20m.} 
+\label{table:resultsComplete20m} \\
+%HEADER
+\hline \multicolumn{1}{|c|}{\textbf{Técnica}} & \multicolumn{1}{c|}{\textbf{$\overline{E_{\mu}}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{E_{rms}}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{\sigma}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{V}$ (m)}} \\ \hline 
+\endfirsthead
+%END
+\hline
+\endlastfoot
+%VALUES
+KNN ($K=1$; $W=0$) & 146 & 252 & 6 & 43 \\
+KNN ($K=2$; $W=0$) & 132 & 220 & 5 & 31 \\
+KNN ($K=2$; $W=1$) & 103 & 184 & 4 & 24 \\
+KNN ($K=2$; $W=2$) & 105 & 193 & 5 & 27 \\
+KNN ($K=2$; $W=3$) & 105 & 193 & 5 & 26 \\
+KNN ($K=3$; $W=0$) & 126 & 208 & 5 & 28 \\
+KNN ($K=3$; $W=1$) & 109 & 188 & 4 & 23 \\
+KNN ($K=3$; $W=2$) & 111 & 198 & 5 & 27 \\
+KNN ($K=3$; $W=3$) & 112 & 201 & 5 & 28 \\
+KNN ($K=4$; $W=0$) & 126 & 206 & 5 & 27 \\
+KNN ($K=4$; $W=1$) & 112 & 190 & 4 & 24 \\
+KNN ($K=4$; $W=2$) & 111 & 192 & 4 & 25 \\
+KNN ($K=4$; $W=3$) & 113 & 194 & 5 & 26 \\
+KNN ($K=5$; $W=0$) & 129 & 210 & 5 & 28 \\
+KNN ($K=5$; $W=1$) & 117 & 199 & 5 & 26 \\
+KNN ($K=5$; $W=2$) & 115 & 199 & 5 & 27 \\
+KNN ($K=5$; $W=3$) & 116 & 202 & 5 & 27 \\
+MLP (Act=identity; LR=constante; HLS=50) & 1628 & 1698 & 15 & 233 \\
+MLP (Act=identity; LR=constante; HLS=100) & 1636 & 1706 & 15 & 232 \\
+MLP (Act=identity; LR=constante; HLS=200) & 1679 & 1752 & 15 & 249 \\
+MLP (Act=identity; LR=constante; HLS=500) & 1692 & 1767 & 15 & 256 \\
+MLP (Act=identity; LR=invscaling; HLS=50) & 1626 & 1697 & 15 & 234 \\
+MLP (Act=identity; LR=invscaling; HLS=100) & 1656 & 1729 & 15 & 247 \\
+MLP (Act=identity; LR=invscaling; HLS=200) & 1686 & 1759 & 15 & 250 \\
+MLP (Act=identity; LR=invscaling; HLS=500) & 1691 & 1765 & 16 & 255 \\
+MLP (Act=identity; LR=adaptativo; HLS=50) & 1605 & 1677 & 15 & 235 \\
+MLP (Act=identity; LR=adaptativo; HLS=100) & 1637 & 1706 & 15 & 233 \\
+MLP (Act=identity; LR=adaptativo; HLS=200) & 1677 & 1749 & 15 & 245 \\
+MLP (Act=identity; LR=adaptativo; HLS=500) & 1691 & 1764 & 16 & 255 \\
+MLP (Act=logistic; LR=constante; HLS=50) & 1615 & 1687 & 15 & 238 \\
+MLP (Act=logistic; LR=constante; HLS=100) & 1666 & 1734 & 15 & 228 \\
+MLP (Act=logistic; LR=constante; HLS=200) & 1669 & 1742 & 15 & 251 \\
+MLP (Act=logistic; LR=constante; HLS=500) & 1699 & 1775 & 16 & 263 \\
+MLP (Act=logistic; LR=invscaling; HLS=50) & 1655 & 1723 & 15 & 230 \\
+MLP (Act=logistic; LR=invscaling; HLS=100) & 1646 & 1719 & 15 & 244 \\
+MLP (Act=logistic; LR=invscaling; HLS=200) & 1677 & 1749 & 15 & 248 \\
+MLP (Act=logistic; LR=invscaling; HLS=500) & 1670 & 1744 & 15 & 250 \\
+MLP (Act=logistic; LR=adaptativo; HLS=50) & 1680 & 1755 & 15 & 256 \\
+MLP (Act=logistic; LR=adaptativo; HLS=100) & 1684 & 1757 & 15 & 250 \\
+MLP (Act=logistic; LR=adaptativo; HLS=200) & 1668 & 1740 & 15 & 248 \\
+MLP (Act=logistic; LR=adaptativo; HLS=500) & 1680 & 1755 & 16 & 255 \\
+MLP (Act=tanh; LR=constante; HLS=50) & 1642 & 1715 & 15 & 244 \\
+MLP (Act=tanh; LR=constante; HLS=100) & 1659 & 1730 & 15 & 241 \\
+MLP (Act=tanh; LR=constante; HLS=200) & 1678 & 1749 & 15 & 243 \\
+MLP (Act=tanh; LR=constante; HLS=500) & 1690 & 1764 & 15 & 254 \\
+MLP (Act=tanh; LR=invscaling; HLS=50) & 1639 & 1707 & 15 & 228 \\
+MLP (Act=tanh; LR=invscaling; HLS=100) & 1657 & 1727 & 15 & 238 \\
+MLP (Act=tanh; LR=invscaling; HLS=200) & 1668 & 1739 & 15 & 240 \\
+MLP (Act=tanh; LR=invscaling; HLS=500) & 1690 & 1764 & 16 & 254 \\
+MLP (Act=tanh; LR=adaptativo; HLS=50) & 1639 & 1708 & 15 & 231 \\
+MLP (Act=tanh; LR=adaptativo; HLS=100) & 1617 & 1688 & 15 & 231 \\
+MLP (Act=tanh; LR=adaptativo; HLS=200) & 1680 & 1752 & 15 & 249 \\
+MLP (Act=tanh; LR=adaptativo; HLS=500) & 1691 & 1765 & 15 & 255 \\
+MLP (Act=relu; LR=constante; HLS=50) & 1704 & 1782 & 16 & 269 \\
+MLP (Act=relu; LR=constante; HLS=100) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=constante; HLS=200) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=constante; HLS=500) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=50) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=100) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=200) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=500) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=adaptativo; HLS=50) & 1676 & 1753 & 16 & 266 \\
+MLP (Act=relu; LR=adaptativo; HLS=100) & 1711 & 1790 & 16 & 276 \\
+MLP (Act=relu; LR=adaptativo; HLS=200) & 1712 & 1790 & 16 & 275 \\
+MLP (Act=relu; LR=adaptativo; HLS=500) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,05$) & 1631 & 1700 & 15 & 229 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,1$) & 1707 & 1785 & 16 & 273 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,05$) & 1440 & 1510 & 14 & 206 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,1$) & 1683 & 1760 & 16 & 265 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,05$) & 1388 & 1439 & 11 & 145 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,1$) & 1599 & 1685 & 16 & 281 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,05$) & 1433 & 1496 & 13 & 187 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,1$) & 1470 & 1550 & 15 & 242 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,2$) & 1708 & 1788 & 16 & 277 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,05$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,1$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,05$) & 1689 & 1763 & 16 & 257 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,1$) & 1682 & 1763 & 16 & 277 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,2$) & 1712 & 1790 & 16 & 275 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,05$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,1$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,2$) & 1708 & 1787 & 16 & 276 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,05$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,1$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,2$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,05$) & 1627 & 1695 & 14 & 225 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,1$) & 1668 & 1740 & 15 & 243 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,2$) & 1687 & 1761 & 15 & 251 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,05$) & 1627 & 1695 & 15 & 226 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,1$) & 1669 & 1740 & 15 & 244 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,2$) & 1689 & 1762 & 16 & 253 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,05$) & 1629 & 1697 & 14 & 225 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,1$) & 1671 & 1742 & 15 & 244 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,2$) & 1689 & 1762 & 16 & 252 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,05$) & 1629 & 1697 & 14 & 225 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,1$) & 1670 & 1742 & 15 & 243 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,2$) & 1689 & 1763 & 16 & 253 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,05$) & 1390 & 1489 & 16 & 282 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,1$) & 1267 & 1399 & 18 & 343 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,2$) & 1421 & 1501 & 15 & 232 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,05$) & 1501 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,1$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,2$) & 1501 & 1558 & 13 & 175 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,05$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,1$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,2$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,05$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,1$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,2$) & 1502 & 1558 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,5$) & 1617 & 1694 & 15 & 254 \\
+\textit{Random Forest} ($M=10$) & 126 & 225 & 5 & 35 \\
+\textit{Random Forest} ($M=20$) & 125 & 229 & 5 & 37 \\
+\textit{Random Forest} ($M=50$) & 123 & 228 & 6 & 37 \\
+\textit{Random Forest} ($M=75$) & 122 & 227 & 6 & 37 \\
+\textit{Random Forest} ($M=100$) & 122 & 227 & 5 & 37 \\
+\end{longtable}
+\end{center}
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+
+\subsection{Resultados para GRID com resolução de 10m}
+\label{appendix:fulltable10m}
+
+%TABELA COMPLETA 10m
+\begin{center}
+\begin{longtable}{|l|l|l|l|l|}
+\caption{Resultados Completos - Resolução 10m.} 
+\label{table:resultsComplete10m} \\
+%HEADER
+\hline \multicolumn{1}{|c|}{\textbf{Técnica}} & \multicolumn{1}{c|}{\textbf{$\overline{E_{\mu}}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{E_{rms}}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{\sigma}$ (m)}} & \multicolumn{1}{c|}{\textbf{$\overline{V}$ (m)}} \\ \hline 
+\endfirsthead
+%END
+\hline
+\endlastfoot
+%VALUES
+KNN ($K=1$; $W=0$) & 134 & 230 & 6 & 36 \\
+KNN ($K=2$; $W=0$) & 123 & 209 & 5 & 29 \\
+KNN ($K=2$; $W=1$) & 88 & 175 & 4 & 24 \\
+KNN ($K=2$; $W=2$) & 89 & 178 & 4 & 24 \\
+KNN ($K=2$; $W=3$) & 90 & 179 & 4 & 24 \\
+KNN ($K=3$; $W=0$) & 120 & 205 & 5 & 28 \\
+KNN ($K=3$; $W=1$) & 96 & 181 & 4 & 24 \\
+KNN ($K=3$; $W=2$) & 97 & 185 & 4 & 26 \\
+KNN ($K=3$; $W=3$) & 98 & 190 & 4 & 27 \\
+KNN ($K=4$; $W=0$) & 121 & 203 & 5 & 27 \\
+KNN ($K=4$; $W=1$) & 103 & 191 & 5 & 27 \\
+KNN ($K=4$; $W=2$) & 101 & 195 & 5 & 28 \\
+KNN ($K=4$; $W=3$) & 101 & 194 & 5 & 28 \\
+KNN ($K=5$; $W=0$) & 123 & 203 & 5 & 26 \\
+KNN ($K=5$; $W=1$) & 106 & 190 & 5 & 25 \\
+KNN ($K=5$; $W=2$) & 102 & 194 & 5 & 27 \\
+KNN ($K=5$; $W=3$) & 102 & 196 & 5 & 28 \\
+MLP (Act=identity; LR=constante; HLS=50) & 1591 & 1662 & 15 & 231 \\
+MLP (Act=identity; LR=constante; HLS=100) & 1638 & 1708 & 15 & 233 \\
+MLP (Act=identity; LR=constante; HLS=200) & 1663 & 1734 & 15 & 240 \\
+MLP (Act=identity; LR=constante; HLS=500) & 1683 & 1757 & 16 & 254 \\
+MLP (Act=identity; LR=invscaling; HLS=50) & 1654 & 1726 & 15 & 244 \\
+MLP (Act=identity; LR=invscaling; HLS=100) & 1640 & 1710 & 15 & 234 \\
+MLP (Act=identity; LR=invscaling; HLS=200) & 1677 & 1750 & 15 & 249 \\
+MLP (Act=identity; LR=invscaling; HLS=500) & 1686 & 1761 & 16 & 257 \\
+MLP (Act=identity; LR=adaptativo; HLS=50) & 1636 & 1706 & 15 & 234 \\
+MLP (Act=identity; LR=adaptativo; HLS=100) & 1625 & 1696 & 15 & 234 \\
+MLP (Act=identity; LR=adaptativo; HLS=200) & 1674 & 1746 & 15 & 246 \\
+MLP (Act=identity; LR=adaptativo; HLS=500) & 1685 & 1760 & 16 & 257 \\
+MLP (Act=logistic; LR=constante; HLS=50) & 1549 & 1620 & 14 & 225 \\
+MLP (Act=logistic; LR=constante; HLS=100) & 1612 & 1687 & 15 & 247 \\
+MLP (Act=logistic; LR=constante; HLS=200) & 1672 & 1745 & 15 & 251 \\
+MLP (Act=logistic; LR=constante; HLS=500) & 1687 & 1762 & 16 & 260 \\
+MLP (Act=logistic; LR=invscaling; HLS=50) & 1707 & 1774 & 15 & 233 \\
+MLP (Act=logistic; LR=invscaling; HLS=100) & 1658 & 1732 & 15 & 248 \\
+MLP (Act=logistic; LR=invscaling; HLS=200) & 1677 & 1751 & 15 & 254 \\
+MLP (Act=logistic; LR=invscaling; HLS=500) & 1664 & 1737 & 15 & 249 \\
+MLP (Act=logistic; LR=adaptativo; HLS=50) & 1649 & 1718 & 15 & 231 \\
+MLP (Act=logistic; LR=adaptativo; HLS=100) & 1643 & 1718 & 15 & 251 \\
+MLP (Act=logistic; LR=adaptativo; HLS=200) & 1686 & 1760 & 15 & 258 \\
+MLP (Act=logistic; LR=adaptativo; HLS=500) & 1674 & 1749 & 16 & 256 \\
+MLP (Act=tanh; LR=constante; HLS=50) & 1642 & 1711 & 15 & 232 \\
+MLP (Act=tanh; LR=constante; HLS=100) & 1644 & 1716 & 15 & 241 \\
+MLP (Act=tanh; LR=constante; HLS=200) & 1673 & 1745 & 15 & 246 \\
+MLP (Act=tanh; LR=constante; HLS=500) & 1685 & 1759 & 16 & 256 \\
+MLP (Act=tanh; LR=invscaling; HLS=50) & 1623 & 1695 & 15 & 237 \\
+MLP (Act=tanh; LR=invscaling; HLS=100) & 1639 & 1712 & 15 & 242 \\
+MLP (Act=tanh; LR=invscaling; HLS=200) & 1679 & 1752 & 15 & 251 \\
+MLP (Act=tanh; LR=invscaling; HLS=500) & 1684 & 1758 & 16 & 255 \\
+MLP (Act=tanh; LR=adaptativo; HLS=50) & 1621 & 1689 & 15 & 227 \\
+MLP (Act=tanh; LR=adaptativo; HLS=100) & 1642 & 1713 & 15 & 235 \\
+MLP (Act=tanh; LR=adaptativo; HLS=200) & 1665 & 1737 & 15 & 244 \\
+MLP (Act=tanh; LR=adaptativo; HLS=500) & 1681 & 1755 & 15 & 252 \\
+MLP (Act=relu; LR=constante; HLS=50) & 1678 & 1759 & 16 & 275 \\
+MLP (Act=relu; LR=constante; HLS=100) & 1704 & 1784 & 16 & 276 \\
+MLP (Act=relu; LR=constante; HLS=200) & 1704 & 1784 & 16 & 276 \\
+MLP (Act=relu; LR=constante; HLS=500) & 1704 & 1783 & 16 & 276 \\
+MLP (Act=relu; LR=invscaling; HLS=50) & 1704 & 1783 & 16 & 276 \\
+MLP (Act=relu; LR=invscaling; HLS=100) & 1695 & 1775 & 16 & 275 \\
+MLP (Act=relu; LR=invscaling; HLS=200) & 1704 & 1784 & 16 & 276 \\
+MLP (Act=relu; LR=invscaling; HLS=500) & 1704 & 1784 & 16 & 276 \\
+MLP (Act=relu; LR=adaptativo; HLS=50) & 1682 & 1762 & 16 & 274 \\
+MLP (Act=relu; LR=adaptativo; HLS=100) & 1704 & 1784 & 16 & 276 \\
+MLP (Act=relu; LR=adaptativo; HLS=200) & 1704 & 1784 & 16 & 276 \\
+MLP (Act=relu; LR=adaptativo; HLS=500) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,05$) & 1617 & 1687 & 15 & 233 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,1$) & 1700 & 1779 & 16 & 274 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,2$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=poly; $C=0,5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,05$) & 1433 & 1503 & 14 & 206 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,1$) & 1676 & 1754 & 16 & 268 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,2$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=poly; $C=1$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,05$) & 1386 & 1437 & 11 & 144 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,1$) & 1589 & 1676 & 16 & 283 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,2$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=poly; $C=2$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,05$) & 1429 & 1493 & 13 & 187 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,1$) & 1461 & 1541 & 15 & 238 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,2$) & 1701 & 1781 & 16 & 277 \\
+SVM (Kernel=poly; $C=5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,05$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,1$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,2$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=rbf; $C=0,5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,05$) & 1683 & 1759 & 16 & 263 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,1$) & 1692 & 1772 & 16 & 277 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,2$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=rbf; $C=1$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,05$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,1$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,2$) & 1704 & 1784 & 16 & 276 \\
+SVM (Kernel=rbf; $C=2$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,05$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,1$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,2$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=rbf; $C=5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,05$) & 1618 & 1687 & 14 & 225 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,1$) & 1660 & 1732 & 15 & 243 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,2$) & 1680 & 1753 & 15 & 252 \\
+SVM (Kernel=linear; $C=0,5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,05$) & 1618 & 1687 & 14 & 226 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,1$) & 1660 & 1732 & 15 & 244 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,2$) & 1681 & 1755 & 16 & 253 \\
+SVM (Kernel=linear; $C=1$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,05$) & 1620 & 1688 & 14 & 225 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,1$) & 1662 & 1735 & 15 & 244 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,2$) & 1681 & 1754 & 16 & 252 \\
+SVM (Kernel=linear; $C=2$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,05$) & 1620 & 1688 & 14 & 225 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,1$) & 1662 & 1734 & 15 & 244 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,2$) & 1682 & 1755 & 16 & 253 \\
+SVM (Kernel=linear; $C=5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,05$) & 1377 & 1477 & 16 & 279 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,1$) & 1256 & 1387 & 18 & 337 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,2$) & 1407 & 1487 & 15 & 231 \\
+SVM (Kernel=sigmoid; $C=0,5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,05$) & 1496 & 1553 & 13 & 175 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,1$) & 1496 & 1553 & 13 & 175 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,2$) & 1495 & 1553 & 13 & 175 \\
+SVM (Kernel=sigmoid; $C=1$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,05$) & 1496 & 1553 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,1$) & 1496 & 1553 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,2$) & 1496 & 1553 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=2$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,05$) & 1496 & 1553 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,1$) & 1496 & 1553 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,2$) & 1496 & 1553 & 13 & 174 \\
+SVM (Kernel=sigmoid; $C=5$; $\epsilon=0,5$) & 1604 & 1681 & 15 & 253 \\
+\textit{Random Forest} ($M=10$) & 114 & 219 & 5 & 35 \\
+\textit{Random Forest} ($M=20$) & 114 & 218 & 5 & 35 \\
+\textit{Random Forest} ($M=50$) & 109 & 211 & 5 & 33 \\
+\textit{Random Forest} ($M=75$) & 111 & 218 & 5 & 36 \\
+\textit{Random Forest} ($M=100$) & 109 & 211 & 5 & 33 \\
+\end{longtable}
+\end{center}
